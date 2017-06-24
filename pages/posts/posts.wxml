@@ -1,0 +1,13 @@
+<view>
+  <swiper indicator-dots="true">
+    <swiper-item >
+      <image src="/images/post/xiaolong.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/sls.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
