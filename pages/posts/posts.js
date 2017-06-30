@@ -1,38 +1,33 @@
+// 接收数据---值可以用相对路径
+var postsData=require('../../data/posts-data.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    date: "Now 11 2020"
+    //小程序总是会读取data对象来做数据绑定，这个动作我们称为动作A
+    // 而这个动作A的执行，是在onLoad事件执行之后发生的。
+    // posts_key: postsData.postList
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var posts_content=[
-      {
-        date:'Sep 18 2016',
-        title:'正是新发型真是',
-        post_img: '/images/post/crab.png',
-        author_img: '/images/avatar/1.png',
-        content:'我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容',
-        view_num:'112',
-        collect_num:'96',
-      }, {
-        date: 'Nov 25 2016',
-        title: '比例.林恩的中场故事',
-        post_img: '/images/post/bl.png',
-        author_img: '/images/avatar/2.png',
-        content: '李安李安李安李安李安李安我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容',
-        view_num: '112',
-        collect_num: '96',
-      },
-    ]
-    this.setData({posts_key:posts_content})
+    // // 添加到data里面。
+    this.setData({ posts_key: postsData.postList})
   },
+  // 点击进入详情页面
+  onPostTap:function(event){
+    //获取点击目标的id值
+    var postId=event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id='+postId
+    })
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
