@@ -1,0 +1,4 @@
+<import src='../movie/movie-template.wxml' />
+<template name="movieGridTemplate">
+
+</template>>

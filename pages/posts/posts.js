@@ -1,5 +1,5 @@
 // 接收数据---值可以用相对路径
-var postsData=require('../../data/posts-data.js')
+var postsData = require('../../data/posts-data.js')
 
 Page({
 
@@ -17,16 +17,25 @@ Page({
    */
   onLoad: function (options) {
     // // 添加到data里面。
-    this.setData({ posts_key: postsData.postList})
+    this.setData({ posts_key: postsData.postList })
   },
   // 点击进入详情页面
-  onPostTap:function(event){
+  onPostTap: function (event) {
     //获取点击目标的id值
-    var postId=event.currentTarget.dataset.postid;
+    var postId = event.currentTarget.dataset.postid;
     wx.navigateTo({
-      url: 'post-detail/post-detail?id='+postId
+      url: 'post-detail/post-detail?id=' + postId
     })
+  },
+  onSwiperTap: function (event) {
+    // targe 和currentTarget 有什么区别
+    //target 指的是当前点击的组件 和currentTarget指的是事件
 
+
+    var postId = event.target.dataset.postid;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

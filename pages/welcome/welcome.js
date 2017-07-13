@@ -29,7 +29,7 @@ Page({
     // });
 
        //跳转网页 父级关闭
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../posts/posts',
       success: function (res) {
         //跳转成功执行的函数
